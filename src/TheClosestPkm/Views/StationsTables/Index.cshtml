@@ -1,0 +1,32 @@
+@model IEnumerable<TheClosestPkm.Models.StationsTable>
+
+@{
+    ViewData["Title"] = "TheClosestPkm";
+}
+
+<h2>Pkm list</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StationName)
+        </th>
+        <th></th>
+    </tr>
+    
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StationName)
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.StationsTableId">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.StationsTableId">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.StationsTableId">Delete</a>
+        </td>
+    </tr>
+}
+</table>

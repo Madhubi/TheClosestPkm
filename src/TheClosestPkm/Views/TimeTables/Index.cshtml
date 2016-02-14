@@ -1,0 +1,50 @@
+@model IEnumerable<TheClosestPkm.Models.TimeTable>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.T1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.T2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.T3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.T4)
+        </th>
+        <th></th>
+    </tr>
+    
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.T1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.T2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.T3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.T4)
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.TimeTableId">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.TimeTableId">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.TimeTableId">Delete</a>
+        </td>
+    </tr>
+}
+</table>

@@ -1,0 +1,58 @@
+@model TheClosestPkm.Models.TimeTable
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>TimeTable</h4>
+        <hr />
+        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="T1" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="T1" class="form-control" />
+                <span asp-validation-for="T1" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="T2" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="T2" class="form-control" />
+                <span asp-validation-for="T2" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="T3" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="T3" class="form-control" />
+                <span asp-validation-for="T3" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="T4" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="T4" class="form-control" />
+                <span asp-validation-for="T4" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
